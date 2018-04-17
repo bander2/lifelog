@@ -1,0 +1,17 @@
+uuid: 66155c26-4dff-4d2a-a1b0-fa6e112006c1
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Activity
+type: activity
+description: 'What you do?!?'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: true

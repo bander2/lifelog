@@ -1,0 +1,26 @@
+uuid: 5d6026d7-ba1e-43a6-bcc7-195e99370e3f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.activity.field_activity
+    - node.type.activity
+  module:
+    - user
+id: node.activity.default
+targetEntityType: node
+bundle: activity
+mode: default
+content:
+  field_activity:
+    weight: 101
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  links:
+    weight: 100
+    region: content
+hidden: {  }

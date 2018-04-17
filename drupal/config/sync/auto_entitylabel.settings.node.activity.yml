@@ -1,0 +1,7 @@
+status: '1'
+pattern: 'Activity ([node:created:raw]): [node:field_activity]'
+php: 0
+escape: 0
+dependencies:
+  config:
+    - node.type.activity

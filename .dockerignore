@@ -1,0 +1,6 @@
+.data
+.settings
+drupal/vendor
+drupal/web/site/default/files/*
+drupal/web/modules/contrib/*
+drupal/web/core

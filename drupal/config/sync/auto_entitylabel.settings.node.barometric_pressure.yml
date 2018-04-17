@@ -1,0 +1,7 @@
+status: '1'
+pattern: 'Pressure ([node:created:raw]): [node:field_pressure]'
+php: 0
+escape: 0
+dependencies:
+  config:
+    - node.type.barometric_pressure

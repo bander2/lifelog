@@ -1,0 +1,5 @@
+name: 'Life Log'
+type: module
+description: 'Log your life!'
+core: 8.x
+package: 'Custom'

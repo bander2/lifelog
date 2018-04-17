@@ -1,0 +1,17 @@
+uuid: 3f092405-b92b-4ed6-9293-b4179feb76b4
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Weight
+type: weight
+description: 'Weigh yo self!'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: true

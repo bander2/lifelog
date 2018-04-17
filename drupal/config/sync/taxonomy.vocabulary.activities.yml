@@ -1,0 +1,9 @@
+uuid: 676707f0-3465-4f25-83d0-aa83a835ebee
+langcode: en
+status: true
+dependencies: {  }
+name: Activities
+vid: activities
+description: 'Things you do.'
+hierarchy: 0
+weight: 0

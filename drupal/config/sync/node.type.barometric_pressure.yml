@@ -1,0 +1,17 @@
+uuid: 483cd7f1-7765-4bcb-a56d-f53d13430e26
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Barometric Pressure'
+type: barometric_pressure
+description: 'What''s the pressure!?!?'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: true

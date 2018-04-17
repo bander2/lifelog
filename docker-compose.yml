@@ -1,0 +1,35 @@
+---
+version: '3'
+services:
+    db:
+        image: mysql
+        container_name: lifelog_db
+        volumes:
+            - ./.data:/var/lib/mysql
+        environment:
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_DATABASE: drupal
+            MYSQL_USER: drupal
+            MYSQL_PASSWORD: drupal
+    web:
+        build:
+            context: .
+            dockerfile: docker/web/Dockerfile
+        container_name: lifelog_web
+        links:
+            - db:drupal_db
+#        volumes:
+#            - ./drupal:/var/www/drupal
+#        volumes:
+#            - ./drupal/.env:/var/www/drupal/.env
+        ports:
+            - 8100:80
+        environment:
+            MYSQL_DATABASE: drupal
+            MYSQL_HOSTNAME: drupal_db
+            MYSQL_PASSWORD: drupal
+            MYSQL_PORT: 3306
+            MYSQL_USER: drupal
+            LIFELOG_OPENWEATHER_APPID: dbba8ad5604d312cf36e74e0be46de26
+            LIFELOG_OPENWEATHER_ZIP: 21043
+            LIFELOG_OPENWEATHER_COUNTY_CODE: us

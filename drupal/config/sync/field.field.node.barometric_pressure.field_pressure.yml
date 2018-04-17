@@ -1,0 +1,23 @@
+uuid: c18397d8-b838-40b1-a31b-380ff2e96797
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_pressure
+    - node.type.barometric_pressure
+id: node.barometric_pressure.field_pressure
+field_name: field_pressure
+entity_type: node
+bundle: barometric_pressure
+label: Pressure
+description: 'In hectopascals!'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: hPa
+field_type: decimal

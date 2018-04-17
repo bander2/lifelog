@@ -1,0 +1,50 @@
+<?php
+
+/**
+ * @file
+ * Contains lifelog.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use function GuzzleHttp\json_decode;
+use Drupal\node\Entity\Node;
+
+function lifelog_cron() {
+  $last_run = \Drupal::state()->get('lifelog.last_pressure_recording', 0);
+
+  if ($last_run + 3600 <= REQUEST_TIME) {
+    $uri = 'http://api.openweathermap.org/data/2.5/weather?' . http_build_query([
+        'zip' => implode(',', [
+            getenv('LIFELOG_OPENWEATHER_ZIP'),
+            getenv('LIFELOG_OPENWEATHER_COUNTY_CODE'),
+        ]),
+        'APPID' => getenv('LIFELOG_OPENWEATHER_APPID'),
+    ]);
+
+    $data = json_decode(file_get_contents($uri), TRUE);
+    $pressure = $data['main']['pressure'];
+
+    Node::create([
+      'type' => 'barometric_pressure',
+      'field_pressure' => $pressure,
+    ])->save();
+
+    \Drupal::state()->set('lifelog.last_pressure_recording', REQUEST_TIME);
+  }
+}
+
+/**
+ * Implements hook_help().
+ */
+function lifelog_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the lifelog module.
+    case 'help.page.lifelog':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Log your life!') . '</p>';
+      return $output;
+
+    default:
+  }
+}

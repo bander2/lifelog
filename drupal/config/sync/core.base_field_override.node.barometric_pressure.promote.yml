@@ -1,0 +1,22 @@
+uuid: 97aa694a-39f1-4d8b-9422-6f0f2a8e6f10
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.barometric_pressure
+id: node.barometric_pressure.promote
+field_name: promote
+entity_type: node
+bundle: barometric_pressure
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

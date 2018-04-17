@@ -1,0 +1,29 @@
+uuid: 8adaa480-50ed-42c8-a196-1408cda75480
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.weight.field_weight
+    - node.type.weight
+  module:
+    - user
+id: node.weight.default
+targetEntityType: node
+bundle: weight
+mode: default
+content:
+  field_weight:
+    weight: 101
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+  links:
+    weight: 100
+    region: content
+hidden: {  }

@@ -1,0 +1,23 @@
+uuid: c7cdefff-cd27-4045-b712-83b587f806fc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_weight
+    - node.type.weight
+id: node.weight.field_weight
+field_name: field_weight
+entity_type: node
+bundle: weight
+label: Weight
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: !!float 0
+  max: null
+  prefix: ''
+  suffix: lbs
+field_type: decimal
