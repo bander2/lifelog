@@ -796,4 +796,4 @@ $databases['default']['default'] = [
   'prefix' => '',
   'username' => getenv('MYSQL_USER'),
 ];
-$settings['install_profile'] = 'standard';
+$settings['install_profile'] = 'minimal';

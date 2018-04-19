@@ -1,0 +1,7 @@
+dev:
+  root: /var/www/drupal/web
+  uri: http://localhost:8100
+  
+prod:
+  root: /var/www/drupal/web
+  uri: http://104.131.66.133

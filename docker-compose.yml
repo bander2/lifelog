@@ -7,10 +7,10 @@ services:
         volumes:
             - ./.data:/var/lib/mysql
         environment:
-            MYSQL_ROOT_PASSWORD: root
-            MYSQL_DATABASE: drupal
-            MYSQL_USER: drupal
-            MYSQL_PASSWORD: drupal
+            MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+            MYSQL_DATABASE: ${MYSQL_DATABASE}
+            MYSQL_USER: ${MYSQL_USER}
+            MYSQL_PASSWORD: ${MYSQL_PASSWORD}
     web:
         build:
             context: .
@@ -20,16 +20,14 @@ services:
             - db:drupal_db
 #        volumes:
 #            - ./drupal:/var/www/drupal
-#        volumes:
-#            - ./drupal/.env:/var/www/drupal/.env
         ports:
             - 8100:80
         environment:
-            MYSQL_DATABASE: drupal
-            MYSQL_HOSTNAME: drupal_db
-            MYSQL_PASSWORD: drupal
-            MYSQL_PORT: 3306
-            MYSQL_USER: drupal
-            LIFELOG_OPENWEATHER_APPID: dbba8ad5604d312cf36e74e0be46de26
-            LIFELOG_OPENWEATHER_ZIP: 21043
-            LIFELOG_OPENWEATHER_COUNTY_CODE: us
+            MYSQL_DATABASE: ${MYSQL_DATABASE}
+            MYSQL_HOSTNAME: ${MYSQL_HOSTNAME}
+            MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+            MYSQL_PORT: ${MYSQL_PORT}
+            MYSQL_USER: ${MYSQL_USER}
+            LIFELOG_OPENWEATHER_APPID: ${LIFELOG_OPENWEATHER_APPID}
+            LIFELOG_OPENWEATHER_ZIP: ${LIFELOG_OPENWEATHER_ZIP}
+            LIFELOG_OPENWEATHER_COUNTY_CODE: ${LIFELOG_OPENWEATHER_COUNTY_CODE}
