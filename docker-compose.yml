@@ -18,8 +18,8 @@ services:
         container_name: lifelog_web
         links:
             - db:drupal_db
-#        volumes:
-#            - ./drupal:/var/www/drupal
+        volumes:
+            - ./drupal:/var/www/drupal
         ports:
             - 8100:80
         environment:
